@@ -15,7 +15,7 @@ This is a simple, fast module that allows you to run a range of accessibility te
 const a11y = require('a11y-string')
 
 a11y('<html><head><title>Test title</title></head><body><img src="foo.jpg" /></body></html>')
-// Returns Error: Image needs alt attribute
+// Throws Error: All images must have an alt attribute
 ```
 
 ## Reasoning
