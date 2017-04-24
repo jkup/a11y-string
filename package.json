@@ -1,0 +1,27 @@
+{
+  "name": "a11y-string",
+  "version": "0.0.1",
+  "description": "Run Accessibility tests against a string of HTML",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkup/a11y-string.git"
+  },
+  "keywords": [
+    "a11y",
+    "accessibility",
+    "html",
+    "ast",
+    "parser",
+    "testing"
+  ],
+  "author": "Jon Kuperman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkup/a11y-string/issues"
+  },
+  "homepage": "https://github.com/jkup/a11y-string#readme"
+}
