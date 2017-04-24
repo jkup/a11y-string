@@ -4,7 +4,8 @@
   "description": "Run Accessibility tests against a string of HTML",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "prettier --single-quote --trailing-comma es5 --write '{app,__{tests,mocks}__}/**/*.js'"
   },
   "repository": {
     "type": "git",
