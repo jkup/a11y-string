@@ -26,5 +26,8 @@
   "homepage": "https://github.com/jkup/a11y-string#readme",
   "dependencies": {
     "htmlparser2": "^3.9.2"
+  },
+  "devDependencies": {
+    "jest": "^19.0.2"
   }
 }
