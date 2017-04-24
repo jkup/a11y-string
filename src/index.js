@@ -1,21 +1,26 @@
 const htmlparser = require('htmlparser2');
 
 function parse (HTMLString) {
-  let tags = []
+  let results
 
-  var parser = new htmlparser.Parser({
-    onopentag: function(name, attributes){
-      if (name === 'img' && attributes.alt === undefined)
-        throw new Error('All images must have an alt attribute')
+  const handler = new htmlparser.DomHandler((error, dom) => {
+    if (error)
+      throw new Error('Invalid HTML passed to a11y-string')
+    else
+      results = dom
+  })
 
-      tags.push({name: name, attributes: attributes})
-    }
-  }, {decodeEntities: true});
-
+  const parser = new htmlparser.Parser(handler)
   parser.write(HTMLString);
   parser.end();
 
-  return tags
+  // Run all tests here for now
+  results.forEach((node) => {
+    if (node.name === 'img' && node.attribs.alt === undefined)
+      throw new Error('All images must have an alt attribute')
+  });
+
+  return results
 }
 
 module.exports = parse;
