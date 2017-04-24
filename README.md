@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jkup/a11y-string.svg?branch=master)](https://travis-ci.org/jkup/a11y-string)
+
 # a11y String
 
 This is a simple, fast module that allows you to run a range of accessibility tests against a string of HTML.
