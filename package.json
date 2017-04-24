@@ -28,6 +28,7 @@
     "htmlparser2": "^3.9.2"
   },
   "devDependencies": {
-    "jest": "^19.0.2"
+    "jest": "^19.0.2",
+    "prettier": "^1.2.2"
   }
 }
