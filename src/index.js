@@ -1,7 +1,8 @@
 const htmlparser = require('htmlparser2');
 
-function parse (HTMLString) {
+function parse (HTMLString, isPartial) {
   let results
+  let hasTitle = false
 
   const handler = new htmlparser.DomHandler((error, dom) => {
     if (error)
@@ -18,8 +19,13 @@ function parse (HTMLString) {
   results.forEach((node) => {
     if (node.name === 'img' && node.attribs.alt === undefined)
       throw new Error('All images must have an alt attribute')
+    if (node.name === 'title')
+      hasTitle = true
   });
 
+  // DOM should contain a title tag only if not a partial
+  if (!hasTitle && !isPartial)
+    throw new Error('The web page should have a title that describes topic or purpose')
   return results
 }
 
